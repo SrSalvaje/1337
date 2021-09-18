@@ -4,8 +4,8 @@ import styles from './CardGrid.module.css'
 const CardGrid = (props) => {
     const {children} = props
     return (
-        <div className={styles.grid}>
-
+        <div className={styles.grid} >
+            {children}
         </div>
     )
 }
