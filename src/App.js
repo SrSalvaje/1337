@@ -8,21 +8,47 @@ import Card from "./components/Card/Card";
 
 function App() {
 
+    const [data, setData] = useState(mock)
+    const [profilesToDisplay, setProfilesToDisplay ] = useState(null)
+    const [searchQuery, setSearchQuery] = useState("")
 
-  return (
+
+    useEffect(() => {
+        setProfilesToDisplay(mock)
+    }, [data])
+
+    useEffect(()=> {
+        if(searchQuery) {
+            let filteredEmployees = data.filter((employee) => employee.office.toUpperCase().includes(searchQuery.toUpperCase().trim()) || employee.name.toUpperCase().includes(searchQuery.toUpperCase().trim()) )
+            if (filteredEmployees.length > 0) {
+                setProfilesToDisplay(filteredEmployees)
+            } else {
+                setProfilesToDisplay(data)
+            }
+        } else {
+            setProfilesToDisplay(data)
+        }
+
+    }, [searchQuery])
+
+    return (
     <div className={styles.App}>
         <Header/>
-        <SearchBar/>
+        <SearchBar searchQuery ={searchQuery}
+            setSearchQuery = {setSearchQuery}
+        />
         <CardGrid>
-            {mock.map(employee => <Card
+            {profilesToDisplay ? profilesToDisplay.map(employee => <Card
                 image={employee.imagePortraitUrl}
                 name={employee.name}
                 socialMedia={employee.twitter}
                 office={employee.office}
-            />)}
+            />)
+                : "...Loading"
+            }
         </CardGrid>
     </div>
-  );
+    );
 }
 
 export default App;
