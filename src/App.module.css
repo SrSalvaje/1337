@@ -1,4 +1,13 @@
 .App {
   text-align: center;
-}
+  background-color: #0070f3;
+  display: flex;
+  align-items: center;
+  flex-flow: column;
+  height: auto;
+  padding: 5rem 0;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
 
+}
