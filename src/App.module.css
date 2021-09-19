@@ -5,9 +5,7 @@
   align-items: center;
   flex-flow: column;
   height: auto;
-  padding: 5rem 0;
   flex: 1;
   flex-direction: column;
-  justify-content: center;
-
+  height: 100%;
 }
