@@ -6,8 +6,6 @@ const useInfiniteScroll = () => {
   const isInViewPort = useRef();
   const cardGridRef = useRef();
 
-  //
-  //Infinite scroll
   const createObserver = () => {
     let options = {
       root: null,
@@ -29,7 +27,7 @@ const useInfiniteScroll = () => {
     });
   };
 
-  //add the observer tot the ref
+  //add the observer to the ref
   useEffect(() => {
     if (isInViewPort.current) {
       isInViewPort.current = createObserver();
@@ -46,12 +44,6 @@ const useInfiniteScroll = () => {
       //on the container, the divisors are based on the height of each card.
       // The result is also  how many card to add every time infinite scrolling load function is triggered
       let cardsPerInfiniteScrollLoad = maxCardsPerRow * maxCardsPerColumn;
-      console.log(
-        "will set render index to",
-        renderIndex,
-        maxCardsPerRow,
-        maxCardsPerColumn
-      );
       setRenderIndex(cardsPerInfiniteScrollLoad);
     }
 

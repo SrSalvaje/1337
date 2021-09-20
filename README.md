@@ -1,10 +1,38 @@
-# Getting Started with Create React App
+# Tech Assessment
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+The current iteration has the following featues:
+
+Mobile Friendly.  
+Infinity Scroll.  
+Search bar to filter by name or office.  
+CrossBrowser support:
+
+    "last 1 chrome version"  
+    "last 1 firefox version"  
+    "last 1 safari version"  
+
+It uses animations written in vanilla CSS and no UI frameworks, besides React, were used.
+
+My initial goal was to add screen reader and keyboard only function as well, as I consider those to be bare minimums for A11y.
+However I ended up spending about 8 hours on the project so I figured it was time to stop since I think that that is as much part of the tests as the actual features requested.  
+For the same reason the project is lacking tests and some of the components could be further abstracted.
+
+If I had more time, I would also further streamline the CSS by adding global styles and variables and create custom Proptypes for the CardGrid.js `props.children`.
+
+All in all, what I wanted to show was that I have understanding of React beyond the basics, which is why I implemented my own hooks for infinity scroll and fetch.
+
+## Run Locally:
+
+Install dependencies with `npm install`  
+Add a .env.development.local file with the following variable `REACT_APP_TRETTON_API` in which the value should be a valid token for the provided API.  
+Finally, start local server with `npm start`
+
+
 ## Available Scripts
 
-In the project directory, you can run:
+In the project directory, you can run the following scripts either with npm or yarn:
 
 ### `yarn start`
 
@@ -38,33 +66,3 @@ If you aren’t satisfied with the build tool and configuration choices, you can
 Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
