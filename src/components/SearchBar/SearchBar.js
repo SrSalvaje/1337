@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import useDebounce from "../../Hooks/useDebounce";
 import styles from "./SearchBar.module.css";
+import PropTypes from "prop-types";
 
 const SearchBar = (props) => {
   const { setSearchQuery } = props;
@@ -11,10 +12,8 @@ const SearchBar = (props) => {
 
   useEffect(() => {
     if (debounceSearch) {
-      console.log("inside searchBar, will set search to", debounceSearch);
       setSearchQuery(debounceSearch);
     } else {
-      console.log("inside searchBar, clearing search terms");
       setSearchTerm("");
       setSearchQuery("");
     }
@@ -31,6 +30,10 @@ const SearchBar = (props) => {
       ></input>
     </div>
   );
+};
+
+SearchBar.propTypes = {
+  setSearchQuery: PropTypes.func,
 };
 
 export default SearchBar;

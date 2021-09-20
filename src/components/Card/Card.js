@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./Card.module.css";
+import PropTypes from "prop-types";
 
 const Card = (props) => {
   const {
@@ -28,15 +29,45 @@ const Card = (props) => {
           <div>{office}</div>
         </div>
         <div className={styles.cardBack}>
-          <div>Find them in:</div>
-          {twitter && <div>{`Twitter: ${twitter}`}</div>}
-          {gitHub && <div>{`GitHub: ${gitHub}`}</div>}
-          {stackOverflow && <div>{`StackOverflow: ${stackOverflow}`}</div>}
-          {linkedin && <div>{`LinkedIn:${linkedin}`}</div>}
+          <div className={styles.cardBackContainer}>
+            {twitter && (
+              <div>
+                <span>Twitter: </span>
+                {twitter}
+              </div>
+            )}
+            {gitHub && (
+              <div>
+                <span>GitHub: </span>: {gitHub}
+              </div>
+            )}
+            {stackOverflow && (
+              <div>
+                <span>StackOverflow:</span> {stackOverflow}
+              </div>
+            )}
+            {linkedin && (
+              <div>
+                <span>LinkedIn: </span>
+                {linkedin}
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </div>
   );
+};
+
+Card.propTypes = {
+  image: PropTypes.string,
+  name: PropTypes.string,
+  office: PropTypes.string,
+  twitter: PropTypes.string,
+  gitHub: PropTypes.string,
+  stackOverflow: PropTypes.string,
+  linkedin: PropTypes.string,
+  reference: PropTypes.string,
 };
 
 export default Card;

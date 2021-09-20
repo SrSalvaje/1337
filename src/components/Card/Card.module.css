@@ -44,9 +44,19 @@
     background-color: rgb(9, 43, 82);
     color: rgb(132, 196, 106) ;
     transform: rotateY(180deg);
-    opacity: 70%;
+    opacity: 90%;
+}
+.cardBackContainer {
+    padding-top: 30px;
 }
 
+.cardBack span {
+    color: white;
+}
+
+.cardBack:first-child {
+    padding-top: 10px;
+}
 .imageContainer {
     border: 2px solid rgb(132, 196, 106);
     border-radius: 4px;

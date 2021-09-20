@@ -1,16 +1,15 @@
-import React, { useState, useEffect, useRef, useCallback } from "react";
+import React, { useState } from "react";
 import styles from "./App.module.css";
 import Header from "./components/Header/Header";
 import SearchBar from "./components/SearchBar/SearchBar";
 import CardGrid from "./components/CardGrid/CardGrid";
-import mock from "./fakeData";
 import Card from "./components/Card/Card";
 import useEmployeeFilter from "./Hooks/useEmployeeFilter";
 import useInfiniteScroll from "./Hooks/useInfiniteScroll";
 import useFetch from "./Hooks/useFetch";
 
 function App() {
-  const [data, isLoading, hasError, retry] = useFetch();
+  const [data, isLoading, hasError] = useFetch();
 
   //
   //filter based on search

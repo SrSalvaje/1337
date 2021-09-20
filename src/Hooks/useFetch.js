@@ -1,13 +1,9 @@
-import React, { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 const useFetch = () => {
   const [hasError, setHasError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [data, setData] = useState(null);
-
-  const retry = () => {
-    fetchData();
-  };
 
   const fetchData = useCallback(async () => {
     const options = {
@@ -34,7 +30,7 @@ const useFetch = () => {
         setHasError(e);
       }
     }
-  }, [setIsLoading, setData, setHasError]);
+  }, [setIsLoading, setData, setHasError, data, hasError]);
 
   useEffect(() => {
     if (!data) {
@@ -42,7 +38,7 @@ const useFetch = () => {
     }
   }, [data, isLoading]);
 
-  return [data, isLoading, hasError, retry];
+  return [data, isLoading, hasError];
 };
 
 export default useFetch;
