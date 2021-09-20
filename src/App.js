@@ -49,7 +49,10 @@ function App() {
               key={`${i}-${employee.name.replace(/\s+/g, "")}`}
               image={employee.imagePortraitUrl}
               name={employee.name}
-              socialMedia={employee.twitter}
+              twitter={employee.twitter}
+              gitHub={employee.gitHub}
+              stackOverflow={employee.stackOverflow}
+              linkedin={employee.linkedIn}
               office={employee.office}
             />
           ))}
